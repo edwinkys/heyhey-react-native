@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
         lineHeight: 27,
         marginBottom: 27,
         textAlign: 'left'
-    },
+    }
 });
 
-export default styles
+export default styles;

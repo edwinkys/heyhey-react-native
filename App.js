@@ -5,16 +5,20 @@ Main app source code
 */
 
 // Import libraries
-import { StatusBar } from 'expo-status-bar';
 import { AppLoading } from 'expo';
 import * as SplashScreen from 'expo-splash-screen';
 import * as Font from 'expo-font';
 
 import React from 'react';
-import { StyleSheet, Text, View, Button, Alert } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
-// Import stylesheet
-import styles from './styles/style';
+// Import screens
+import WelcomeScreen from './screens/welcome';
+import JokingScreen from './screens/joking';
+
+// Create stack navigator
+const Stack = createStackNavigator();
 
 
 export default class App extends React.Component {
@@ -55,18 +59,16 @@ export default class App extends React.Component {
         }
 
         return (
-            <View style={styles.container}>
-                <StatusBar />
-                <Text style={styles.jumbo}>Welcome to HeyHey!</Text>
-                <Text style={styles.text}>A simple app to cure your boredom 👋</Text>
-                <Button
-                    onPress={() => Alert.alert('Simple Button pressed')}
-                    title='Learn More'
-                    color='#000'
-                    style={styles.button}
-                    accessibilityLabel=''
-                />
-            </View>
-        );
+            <NavigationContainer>
+                <Stack.Navigator 
+                    initialRouteName="Welcome"
+                    screenOptions={{
+                        headerShown: false
+                    }}>
+                    <Stack.Screen name="Welcome" component={WelcomeScreen} />
+                    <Stack.Screen name="Joking" component={JokingScreen} />
+                </Stack.Navigator>
+            </NavigationContainer>
+        )
     }
 }
