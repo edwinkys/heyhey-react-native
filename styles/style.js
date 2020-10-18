@@ -11,8 +11,17 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#fff',
-        justifyContent: 'center',
-        paddingHorizontal: 20,
+        paddingHorizontal: 20
+    },
+
+    containerWithImage: {
+        flex: 1,
+        backgroundColor: '#ffffff95',
+        paddingHorizontal: 20
+    },
+
+    bgImage: {
+        flex: 1
     },
 
     jumbo: {
