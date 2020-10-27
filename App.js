@@ -14,6 +14,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 // Import screens
+import LoginScreen from './screens/login';
 import WelcomeScreen from './screens/welcome';
 import JokingScreen from './screens/joking';
 
@@ -61,12 +62,13 @@ export default class App extends React.Component {
         return (
             <NavigationContainer>
                 <Stack.Navigator 
-                    initialRouteName="Welcome"
+                    initialRouteName="Login"
                     screenOptions={{
                         headerShown: false
                     }}>
-                    <Stack.Screen name="Welcome" component={WelcomeScreen} />
-                    <Stack.Screen name="Joking" component={JokingScreen} />
+                    <Stack.Screen name="Login" component={ LoginScreen } />
+                    <Stack.Screen name="Welcome" component={ WelcomeScreen } />
+                    <Stack.Screen name="Joking" component={ JokingScreen } />
                 </Stack.Navigator>
             </NavigationContainer>
         )

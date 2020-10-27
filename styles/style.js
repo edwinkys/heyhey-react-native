@@ -42,6 +42,28 @@ const styles = StyleSheet.create({
         lineHeight: 27,
         marginBottom: 27,
         textAlign: 'left'
+    },
+
+    input: {
+        fontFamily: 'Montserrat',
+        fontSize: 18,
+        color: '#333',
+        letterSpacing: 1,
+        borderWidth: 1,
+        borderColor: '#33E1FF',
+        borderRadius: 50,
+        paddingVertical: 16,
+        paddingHorizontal: 16,
+        marginVertical: 25,
+        alignSelf: 'stretch',
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '100%'
+
+    },
+
+    justifyContentCenter: {
+        justifyContent: 'center'
     }
 });
 
