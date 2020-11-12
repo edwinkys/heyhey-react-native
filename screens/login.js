@@ -9,12 +9,28 @@ import { StatusBar } from 'expo-status-bar';
 import React, { memo, useState } from 'react';
 import { Text, View, TextInput, Alert } from 'react-native';
 import { emailValidator } from '../lib/utils';
+import { Audio } from 'expo-av';
 
 // Import stylesheet
 import styles from '../styles/style';
 
 // Import button
 import AppButtonBottom from '../components/button';
+
+// Music
+function music(){
+    (async () => {
+        try {
+            await Audio.setIsEnabledAsync(true);
+            const sound = new Audio.Sound();
+            await sound.loadAsync(require('../assets/rainforest.mp3'));
+            await sound.playAsync();
+
+        } catch (error) {
+            console.error(error);
+        }
+    })();
+}
 
 
 const LoginScreen = ({ navigation }) => {
@@ -30,6 +46,8 @@ const LoginScreen = ({ navigation }) => {
     
         navigation.navigate('Welcome');
     };
+
+    music();
 
     return (
         <View style={ [styles.container, styles.justifyContentCenter] }>

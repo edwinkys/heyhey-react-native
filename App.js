@@ -16,7 +16,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 // Import screens
 import LoginScreen from './screens/login';
 import WelcomeScreen from './screens/welcome';
-import JokingScreen from './screens/joking';
+import MapScreen from './screens/map';
 
 // Create stack navigator
 const Stack = createStackNavigator();
@@ -68,7 +68,7 @@ export default class App extends React.Component {
                     }}>
                     <Stack.Screen name="Login" component={ LoginScreen } />
                     <Stack.Screen name="Welcome" component={ WelcomeScreen } />
-                    <Stack.Screen name="Joking" component={ JokingScreen } />
+                    <Stack.Screen name="Map" component={ MapScreen } />
                 </Stack.Navigator>
             </NavigationContainer>
         )

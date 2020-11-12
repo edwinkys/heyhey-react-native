@@ -14,7 +14,6 @@ import styles from '../styles/style';
 
 // Import button
 import AppButtonBottom from '../components/button';
-import CardImage from '../components/card';
 
 
 function WelcomeScreen ({ navigation }) {
@@ -23,18 +22,14 @@ function WelcomeScreen ({ navigation }) {
             source={ require('../assets/bg.png') }
             style={ styles.bgImage }>
 
-            <View style={ styles.containerWithImage }>
+            <View style={ [styles.containerWithImage, styles.justifyContentCenter] }>
                 <StatusBar />
-
-                <CardImage 
-                image={ require('../assets/welcome.png') }
-                />
 
                 <Text style={ styles.jumbo }>Welcome to HeyHey!</Text>
                 <Text style={ styles.text }>A simple app to cure your boredom 👋</Text>
                 <AppButtonBottom
-                    onPress={() => navigation.navigate('Joking')}
-                    title='Learn More'
+                    onPress={() => navigation.navigate('Map')}
+                    title='Our HQ'
                 />
             </View>
         </ImageBackground>
